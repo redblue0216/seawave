@@ -73,7 +73,7 @@ $$
 For trend candidate $j$, the selection score uses the worst of $m$ staggered windows:
 
 $$
-s_j=\max_{k=1,\ldots,m}\left(\frac{\operatorname{MAE}_j^{(k)}}{\sigma^{(k)}}\right)(1+\gamma\,\mathrm{pen}_j).
+s_j=\max_{k=1,\ldots,m}\left(\frac{\mathrm{MAE}_j^{(k)}}{\sigma^{(k)}}\right)(1+\gamma\,\mathrm{pen}_j).
 $$
 
 The HP trend solves $(I+\lambda K^T K)T=y$. Fourier coefficients use $(F^TF+\delta I)^{-1}F^T(y-T)$. The direct residual model includes horizon as a feature, avoiding recursive residual prediction.
