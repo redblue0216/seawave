@@ -1,0 +1,67 @@
+[build-system]
+requires = ["setuptools>=77.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "seawave"
+version = "0.1.1"
+description = "SeaWave - Interpretable structural forecasting with gated LightGBM residual learning"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.13,<3.14"
+authors = [
+    {name = "shihua", email = "15021408795@163.com"}
+]
+keywords = ["jax", "lightgbm", "time-series", "forecasting", "decomposition"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+dependencies = [
+    "jax>=0.12.0.1",
+    "jaxlib>=0.12.0.1",
+    "lightgbm>=4.7.0",
+    "numpy>=2.5.4",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "black>=24.0",
+    "ruff>=0.6.0",
+    "mypy>=1.10",
+    "uv>=0.4",
+]
+
+[project.urls]
+Homepage = "https://github.com/redblue0216/seawave"
+Documentation = "https://github.com/redblue0216/seawave/blob/main/README.md"
+Repository = "https://github.com/redblue0216/seawave"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["seawave*"]
+exclude = ["*.__pycache__"]
+
+[tool.setuptools.package-data]
+seawave = ["tests/**/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["seawave/tests"]
+
+[tool.black]
+line-length = 100
+target-version = ['py313']
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.mypy]
+python_version = "3.13"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
