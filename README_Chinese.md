@@ -73,7 +73,7 @@ $$
 趋势候选 $j$ 的选择得分取 $m$ 个错位窗口中的最差风险：
 
 $$
-s_j=\max_{k=1,\ldots,m}\left(\frac{\operatorname{MAE}_j^{(k)}}{\sigma^{(k)}}\right)(1+\gamma\,\mathrm{pen}_j).
+s_j=\max_{k=1,\ldots,m}\left(\frac{\mathrm{MAE}_j^{(k)}}{\sigma^{(k)}}\right)(1+\gamma\,\mathrm{pen}_j).
 $$
 
 HP 趋势求解 $(I+\lambda K^T K)T=y$；傅里叶系数使用 $(F^TF+\delta I)^{-1}F^T(y-T)$。直接残差模型将 horizon 作为特征，避免递归残差预测。
